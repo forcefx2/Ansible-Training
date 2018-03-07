@@ -1,26 +1,26 @@
 ---
 - name: Create directories
   file:
-    path: /web/{{ item.path }}
+    path: /tmp/{{ item.path }}
     state: directory
     mode: '{{ item.mode }}'
-  with_filetree: web/
+  with_filetree: conditionals/
   when: item.state == 'directory'
 
 - name: Template files
   template:
     src: '{{ item.src }}'
-    dest: /web/{{ item.path }}
+    dest: /tmp/{{ item.path }}
     mode: '{{ item.mode }}'
-  with_filetree: web/
+  with_filetree: conditionals/
   when: item.state == 'file'
 
 - name: Recreate symlinks
   file:
     src: '{{ item.src }}'
-    dest: /web/{{ item.path }}
+    dest: /tmp/{{ item.path }}
     state: link
     force: yes
     mode: '{{ item.mode }}'
-  with_filetree: web/
+  with_filetree: conditionals/
   when: item.state == 'link'
