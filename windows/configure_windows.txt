@@ -1,0 +1,18 @@
+configure_windows.txt
+Winoows Configuration
+
+sudo yum install python-setuptools
+sudo yum upgrade python-setuptools
+sudo yum install python-pip
+
+
+sudo pip install "pywinrm>=0.2.2"
+
+ansible_user: Administrator
+ansible_password: NZ5(.L7p6?x2I7iITtRL9DW8)pGVQZli
+ansible_port: 5986
+ansible_connection: winrm
+#ansible_winrm_server_cert_validation: ignore
+
+
+curl -vk -d "" -u "user:pass" https://<windows server ip address>:5986/wsman"
