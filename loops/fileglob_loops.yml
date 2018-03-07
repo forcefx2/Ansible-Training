@@ -9,5 +9,5 @@
     dest: "/tmp/student"
     owner: "root"
     mode: 0600
-   with_fileglob:
+  with_fileglob:
       - "loops/*"

@@ -1,0 +1,8 @@
+- name: install {{item}}
+  yum: 
+    name: "{{item}}"
+    state: present
+  with_items:
+    - telnet
+    - tree
+    - vim

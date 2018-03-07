@@ -8,4 +8,4 @@
 - debug:
     msg: "{{ item }}"
   with_inventory_hostnames:
-    - all:!www
+    - all:!dbservers

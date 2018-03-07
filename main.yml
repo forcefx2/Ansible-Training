@@ -1,4 +1,4 @@
-- hosts: webservers
+- hosts: webservers[0]
   vars: 
     Allstate: false
     machine_type: mac
@@ -11,15 +11,5 @@
         telephone: 987-654-3210
   gather_facts: true
   tasks:
-  #-import_tasks: conditionals/conditionals.retry
-  #-import_tasks: conditionals/conditionals.yml
-  ##-import_tasks: conditionals/conditionals2.yml
-  ##-import_tasks: conditionals/group_conditionals.yml
-  ##-import_tasks: conditionals/import_conditionals.yml
-  #- import_tasks: conditionals/jinja2_conditionals.yml
-  #- import_tasks: conditionals/loop_conditionals.yml
-  #- import_tasks: conditionals/math_conditionals.yml
-  ##-import_tasks: conditionals/multi_conditions.yml
-  ##-import_tasks: conditionals/single_condition.yml
-  #- import_tasks: conditionals/undefined_conditionals.yml
-  - import_tasks: conditionals/var_condinals.yml
+  #- import_tasks: loops/std_loop.yml
+  - import_tasks: loops/inventory_hostnames_loops.yml
