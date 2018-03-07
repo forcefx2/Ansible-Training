@@ -1,4 +1,4 @@
-- hosts: webservers[0]
+- hosts: webservers
   vars: 
     Allstate: false
     machine_type: mac
@@ -12,4 +12,4 @@
   gather_facts: true
   tasks:
   #- import_tasks: loops/std_loop.yml
-  - import_tasks: loops/inventory_hostnames_loops.yml
+  - import_tasks: loops/inventory_loops.yml

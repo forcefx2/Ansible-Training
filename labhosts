@@ -6,3 +6,6 @@ host03 ansible_host=159.89.87.183
 [dbservers]
 host04 ansible_host=159.89.50.189
 host05 ansible_host=159.89.50.190
+
+[windows]
+win01 ansible_host=34.209.250.113
