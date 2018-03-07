@@ -1,5 +1,5 @@
-- shell: echo "This certainly is epic!"
-  when: epic
+- shell: echo "i have a job"
+  when: Allstate
 
-- shell: echo "This certainly isn't epic!"
-  when: not epic
+- shell: echo "i dont have a job"
+  when: not Allstate
