@@ -8,3 +8,8 @@
      src: httpd.j2
      dest: /etc/httpd/conf/httpd.conf
   notify: restart apache
+
+- name: start apache
+  service:
+    name: httpd
+    state: started

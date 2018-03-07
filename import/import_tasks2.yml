@@ -1,4 +1,4 @@
-- hosts: remote
+- hosts: webservers
 
   vars:
     httpd_port: 8080

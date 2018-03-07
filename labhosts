@@ -1,5 +1,8 @@
 [webservers]
-web1 ansible_host=159.65.230.40
+host01 ansible_host=159.203.187.195
+host02 ansible_host=159.89.93.43
+host03 ansible_host=159.89.87.183
 
 [dbservers]
-web2 ansible_host=167.99.0.242
+host04 ansible_host=159.89.50.189
+host05 ansible_host=159.89.50.190

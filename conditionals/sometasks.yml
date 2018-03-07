@@ -1,0 +1,2 @@
+- name: echo slogan
+  command: echo Allstate

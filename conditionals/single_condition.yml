@@ -1,4 +1,3 @@
-tasks:
-  - name: "shut down Debian flavored systems"
-    command: /sbin/shutdown -t now
-    when: ansible_os_family == "Debian"
+- name: "shut down Debian flavored systems"
+  command: /sbin/shutdown -t now
+  when: ansible_os_family == "Debian"

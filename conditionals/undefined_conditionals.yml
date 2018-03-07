@@ -1,6 +1,5 @@
-tasks:
-    - shell: echo "I've got '{{ foo }}' and am not afraid to use it!"
-      when: foo is defined
+- shell: echo "I've got '{{ machine_type }}' and am not afraid to use it!"
+  when: machine_type is defined
 
-    - fail: msg="Bailing out. this play requires 'bar'"
-      when: bar is undefined
+- fail: msg="Bailing out. this play requires machine_type"
+  when: machine_type is undefined
