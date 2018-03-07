@@ -5,6 +5,7 @@
 
   tasks:
   - import_tasks: apache_tasks.yml
+    when: ansible_distribution == "Debian"
   
   handlers:
   - import_tasks: apache_handlers.yml
