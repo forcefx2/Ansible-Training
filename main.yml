@@ -1,4 +1,12 @@
 - hosts: webservers
+  vars: 
+    users:
+      ansible:
+        name: ansible_cm
+        telephone: 123-456-7890
+      puppet:
+        name: puppet_cm
+        telephone: 987-654-3210
   gather_facts: true
   tasks:
   #-import_tasks: conditionals/conditionals.retry
