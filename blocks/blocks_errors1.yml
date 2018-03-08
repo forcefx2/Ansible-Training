@@ -1,4 +1,4 @@
-- hosts: web
+- hosts: webservers
   tasks:
   - block: 
       - debug: msg="Hello World"

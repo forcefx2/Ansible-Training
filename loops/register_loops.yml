@@ -3,3 +3,4 @@
     - "one"
     - "two"
   register: echo
+- debug: var=echo.rc
