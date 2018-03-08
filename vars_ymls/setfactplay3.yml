@@ -1,0 +1,8 @@
+---
+- hosts: foo
+  vars:
+    complex_arg: '[{"name":"bob", "address":"mars"},{"name":"mary"}]'
+  tasks:
+    - set_fact: complex_arg
+    - debug:
+        var: complex_arg

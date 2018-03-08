@@ -1,0 +1,9 @@
+---
+- hosts: webservers[0]
+  tasks:
+    # or with a json value
+    - set_fact:
+        complex_arg: '[{"name":"bob", "address":"mars"},{"name":"mary"}]'
+
+    - debug:
+        var: complex_arg
