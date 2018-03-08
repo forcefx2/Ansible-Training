@@ -1,5 +1,5 @@
 - name: Task vars example
-  hosts: mnode1
+  hosts: webservers[0]
   vars_files:
     - copyvars
   tasks:

@@ -1,5 +1,5 @@
 ---
-- hosts: foo
+- hosts: webservers[0]
   vars:
     complex_arg: '[{"name":"bob", "address":"mars"},{"name":"mary"}]'
   tasks:

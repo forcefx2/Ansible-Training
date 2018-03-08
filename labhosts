@@ -1,11 +1,16 @@
 [webservers]
-host01 ansible_host=159.203.187.195
-host02 ansible_host=159.89.93.43
-host03 ansible_host=159.89.87.183
+host01 ansible_host=167.99.8.118 
+host02 ansible_host=167.99.8.88
+host03 ansible_host=167.99.8.91
 
 [dbservers]
-host04 ansible_host=159.89.50.189
-host05 ansible_host=159.89.50.190
+host04 ansible_host=167.99.8.98
+host05 ansible_host=167.99.8.99
+host06 ansible_host=167.99.8.100
 
 [windows]
-win01 ansible_host=34.209.250.113
+win01 ansible_host=34.215.197.72
+
+[webservers:vars]
+SOURCE=/tmp/common.yml 
+DESTINATION=/etc/

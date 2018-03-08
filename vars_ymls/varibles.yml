@@ -1,11 +1,11 @@
-- hosts: all
+- hosts: "{{web}}"
   vars:
     user: Joey
     home: /Users/Joey
 
 
 
-- hosts: all
+- hosts: "{{db}}"
   vars_files:
-    - vars/usersvars.yml
+    - usersvars.yml
 

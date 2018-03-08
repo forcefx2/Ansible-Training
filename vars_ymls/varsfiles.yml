@@ -1,8 +1,14 @@
 - name: Task vars example
-  hosts: mnode1
+  hosts: webservers[0]
+  vars:
+    pkg: git
   vars_files:
     - copyvars
   tasks:
+  - name: install git
+    yum:
+      name: "{{pkg}}"
+
   - name: Copy hosts file to /tmp directory
     copy: 
       src: "{{SOURCE}}"

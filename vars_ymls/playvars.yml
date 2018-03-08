@@ -1,8 +1,5 @@
 - name: Task vars example
-  hosts: mnode1
-  vars:
-   SOURCE: /etc/ansible/ansible.cfg
-   DESTINATION: /tmp/
+  hosts: webservers
   tasks:
   - name: Copy hosts file to /tmp directory
     copy: 
