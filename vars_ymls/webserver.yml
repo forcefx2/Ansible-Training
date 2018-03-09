@@ -1,6 +1,4 @@
-- hosts: mnode4
-  become: yes
-  become_method: sudo
+- hosts: web
   gather_facts: no 
   vars:
     web_pkg: httpd
@@ -28,7 +26,7 @@
       state: started
   - name: create the webcontent to be served
     copy:
-      content: "Variables Web Content\n"
+      content: "Hi Allstate, I am going ahead with 2.0\n"
       dest: /var/www/html/index.html
   - name: open the port for {{ rule }}
     firewalld:
@@ -37,11 +35,11 @@
       immediate: true
       state: enabled
  
-- hosts: mnode3
+- hosts: localhost
   gather_facts: no
   tasks:
   - name: ensure the webserver is reachable
     uri:
-      url: http://192.168.50.104
+      url: http://159.65.91.221
       status_code: 200
 

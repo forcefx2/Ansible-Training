@@ -1,27 +1,35 @@
 ---
-- hosts: mnode2
+- hosts: all
   tasks:
+  - name: install git
+    yum:
+      name: git
+    when: not ansible_check_mode
+
   - name: this task is run even in check mode
-    copy: src=/etc/hosts /tmp/hosts
+    copy: src=/etc/hosts dest=/tmp/hosts
     always_run: yes
 
   - name: delegate action to local
     command: ls -l /etc/hosts
     delegate_to: 127.0.0.1
   
-  - name: take out of load balancer pool
+  - name: running this action in local
     local_action: command ls -l /etc/hosts
+
   - name: update and upgrade ubuntu machine
-    apt: 
+    yum: 
       upgrade=dist 
       update_cache=yes 
       dpkg_options='force-confold,force-confdef'
     run_once: true
-    delegate_to: web01.example.org
+    delegate_to: web01
+    when: ansible_distribution == "Debian"
 
-  - apt: name=cobbler state=installed
+  - yum: name=cobbler state=installed
     environment:
        http_proxy: http://proxy.cognizant.com:6050
+    ignore_errors: true
 
 - name: test play with serial
   hosts: all

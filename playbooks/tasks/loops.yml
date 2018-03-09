@@ -1,6 +1,6 @@
 ##Playbook Conditionals
 ---
-- hosts: mnode11
+- hosts: dbservers
   vars:
      mail_services:
         - postfix
@@ -36,46 +36,7 @@
        name: "{{ item }}"
        state: latest
     with_items: "{{ mail_services }}"
-    tags: 
-      - withitems1
 
-
-  - name: copy files to different sources and different dests using loops
-    copy:
-       src: "{{ item.src }}"
-       dest: "{{ item.dest }}"
-    with_items:
-       - { src: '~/ktx/syllabus.txt', dest: '/home/vagrant/test1.txt'}
-       - { src: '~/ktx/KTX/ktxhosts/myhosts', dest: '/tmp/test2.txt'}
-    tags:
-       - withitems2
-
-  - name: Read lines using with_lines
-    debug: 
-       msg: "I am from file {{ item }}"
-    with_lines:
-       - cat ~/ktx/syllabus.txt
-    tags:
-      - withlines
-
-  - name: List out files with_fileglob
-    copy: 
-       src: "{{ item }}" 
-       dest: "/tmp/"
-    with_fileglob:
-        - ~/ktx/KTX/playbooks/*yml
-    tags:
-      - withfileglob
-
-  - name: Looping over parallel sets of data
-    debug: 
-       msg: "{{ item.0 }} and {{ item.1 }}"
-    with_together:
-       - "{{ alpha }}"
-       - "{{ numbers }}"
-    tags:
-      - withtogether
-       
   - name: Print Hello to Jonathan
     debug:
       msg: " Hello Jonathan"

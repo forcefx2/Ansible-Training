@@ -1,5 +1,13 @@
 ---
-- hosts: host01
+- hosts: web
+  strategy: debug
+  vars:
+     cmd: uptmie
   tasks:
   - name: Find uptime
-    command: uptime
+    command: "{{cmd}}"
+    register: result
+
+  - name: see the result
+    debug: var=result.stdout
+
