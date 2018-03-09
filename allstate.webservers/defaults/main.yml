@@ -1,0 +1,7 @@
+---
+# defaults file for allstate.webservers
+web_pkg: httpd
+firewall_pkg: firewalld
+web_service: httpd
+firewall_service: firewalld
+rule: http 

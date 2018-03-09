@@ -1,0 +1,27 @@
+---
+# tasks file for allstate.webservers
+- name: Install required packages
+  yum:
+      name:
+        - "{{ web_pkg}}"
+        - "{{firewall_pkg}}"
+- name: Start and enable the {{firewall_service}}
+  service:
+    name: "{{ firewall_service }}"
+    enabled: true
+    state: started
+- name: start and enable the {{web_service}}
+  service:
+    name: "{{ web_service}}"
+    enabled: true
+    state: started
+- name: create the webcontent to be served
+  copy:
+    content: "Hi Allstate, I am going ahead with 2.0\n"
+    dest: /var/www/html/index.html
+- name: open the port for {{ rule }}
+  firewalld:
+      service: "{{ rule }}"
+      permanent: true
+      immediate: true
+      state: enabled

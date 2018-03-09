@@ -2,7 +2,7 @@
 - hosts: web
   strategy: debug
   vars:
-     cmd: uptmie
+     cmd: upymie
   tasks:
   - name: Find uptime
     command: "{{cmd}}"
